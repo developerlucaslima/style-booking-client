@@ -62,13 +62,13 @@ export function SignUp() {
         <div className="flex w-[350px] flex-col justify-center gap-6">
           <div className="flex flex-col gap-2 text-center">
             <h1 className="text-2xl font-semibold tracking-tight">
-              Criar conta grátis
+              Dados do estabelecimento
             </h1>
           </div>
 
           <form className="space-y-4" onSubmit={handleSubmit(handleSignUp)}>
             <div className="space-y-2">
-              <Label htmlFor="name">Nome do estabelecimento</Label>
+              <Label htmlFor="name">Nome</Label>
               <Input id="name" type="text" {...register('name')} />
             </div>
 
@@ -83,7 +83,7 @@ export function SignUp() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="phone">Localização do estabelecimento</Label>
+              <Label htmlFor="phone">Localização</Label>
               <Map />
             </div>
 
