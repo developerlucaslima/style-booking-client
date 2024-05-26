@@ -1,19 +1,19 @@
 import { eachHourOfInterval, endOfDay, format, startOfDay } from 'date-fns'
 
-type DayViewProps = {
+type DayViewType = {
   selectedDate: Date
 }
 
-type dateTimeFormatProps = {
+type dateTimeFormatType = {
   time: Date
   index: number
 }
 
-export const DayView = ({ selectedDate }: DayViewProps) => {
+export const DayView = ({ selectedDate }: DayViewType) => {
   const localTimeZoneAbbr = format(new Date(), 'z')
   const currentDay = format(selectedDate, 'EEE')
 
-  const formatDateTime = ({ time, index }: dateTimeFormatProps) => (
+  const formatDateTime = ({ time, index }: dateTimeFormatType) => (
     <time dateTime={format(time, 'yyyy-MM-dd')} className="-mt-3 select-none">
       {index !== 0 ? format(time, 'h:mm') : null}
     </time>
@@ -26,9 +26,9 @@ export const DayView = ({ selectedDate }: DayViewProps) => {
   })
 
   return (
-    <div className="my-2 h-full flex-1 rounded border border-foreground/20 bg-muted">
-      <div className="flex h-12 items-center border-b border-foreground/20">
-        <div className="flex h-full w-32 items-center justify-center border-r border-foreground/20">
+    <div className="my-2 h-full flex-1 rounded border border-input ">
+      <div className="flex h-12 items-center border-b border-input">
+        <div className="flex h-full w-32 items-center justify-center border-r border-input">
           {localTimeZoneAbbr}
         </div>
         <div className="flex h-full flex-1 flex-col px-6 py-3">
@@ -38,9 +38,10 @@ export const DayView = ({ selectedDate }: DayViewProps) => {
       <div className="max-h-full flex-1 overflow-y-scroll pb-32">
         {hours.map((time, index) => (
           <div className="flex h-12" key={index}>
-            <div className="flex h-full w-32 items-start justify-center border-r border-foreground/20">
+            <div className="flex h-full w-32 items-start justify-center border-r border-input">
               {formatDateTime({ time, index })}
             </div>
+            <div className="bg-red-600"> teste teste teste teste</div>
           </div>
         ))}
       </div>
