@@ -1,17 +1,9 @@
-import './global.css'
-
-import { Helmet, HelmetProvider } from 'react-helmet-async'
-import { RouterProvider } from 'react-router-dom'
-import { Toaster } from 'sonner'
-
-import { router } from './routes'
-
-export function App() {
+function App() {
   return (
-    <HelmetProvider>
-      <Helmet titleTemplate="%s | Lookingood" />
-      <Toaster />
-      <RouterProvider router={router} />
-    </HelmetProvider>
+    <>
+    <h1>Hello World!</h1>
+    </>
   )
 }
+
+export default App
