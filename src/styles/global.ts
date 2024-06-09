@@ -21,7 +21,33 @@ export const GlobalStyle = createGlobalStyle`
   body, input, textarea, button {
     font: 400 1rem Roboto, sans-serif;
   }
+
+  h1 {
+    margin: 2rem 0; /* 20px */
+    font-size: 2.25rem; /* 4xl: 36px */
+    font-weight: 800;  /* extrabold */
+    letter-spacing: -0.02em; /* tracking-tight */
+  
+    @media (min-width: 102.4rem) { /* lg: 1024px */
+      font-size: 3rem; /* 5xl: 48px */
+    }
+  }
+
+  h2 {
+    margin-top: 2rem; /* 20px */
+    margin-bottom: 0;
+    padding-bottom: 0.2rem; /* 2px */
+    font-size: 2rem; /* 3xl: 32px */
+    font-weight: 600; /* font-semibold */
+    letter-spacing: -0.02em; /* tracking-tight */
+    border-bottom: 1px solid; /* border-b */
+  
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
 `;
+
 
 // body {
 //   background: ${({ theme }) => theme["gray-100"]};
