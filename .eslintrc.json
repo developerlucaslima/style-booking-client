@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "@developerlucaslima/eslint-config/react"
+  ],
+  "plugins": [
+    "simple-import-sort"
+],
+  "rules": {
+    "no-useless-constructor": "off",
+    "camelcase": "off",
+    "simple-import-sort/imports": "error"
+  },
+  "parserOptions": {
+      "sourceType": "module",
+      "ecmaVersion": "latest"
+  }
+}
