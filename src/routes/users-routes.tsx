@@ -1,26 +1,25 @@
 import { RouteObject } from 'react-router-dom'
 
-import { Dashboard } from '@/pages/users/app/dashboard'
-import { UserSignIn } from '@/pages/users/auth/user-sign-in'
-import { UserSignUp } from '@/pages/users/auth/user-sign-up'
-import { AppLayout } from '@/pages/users/layouts/app'
-import { AuthLayout } from '@/pages/users/layouts/auth'
+import { UserHome } from '@/pages/user/user-app/user-home'
+import { UserSignIn } from '@/pages/user/user-auth/user-sign-in'
+import { UserSignUp } from '@/pages/user/user-auth/user-sign-up'
+import { UserAppLayout } from '@/pages/user/user-layouts/user-app-layout'
+import { UserAuthLayout } from '@/pages/user/user-layouts/user-auth-layout'
 
 export const usersRoutes: RouteObject[] = [
   {
     path: '/',
-    element: <AuthLayout />,
+    element: <UserAuthLayout />,
     children: [
-      { path: '/', element: <UserSignIn /> },
       { path: '/sign-in', element: <UserSignIn /> },
       { path: '/sign-up', element: <UserSignUp /> },
     ],
   },
   {
     path: '/',
-    element: <AppLayout />,
+    element: <UserAppLayout />,
     children: [
-      { path: '/dashboard', element: <Dashboard /> },
+      { path: '/', element: <UserHome /> },
       // { path: '/', element: <SignIn /> },
     ],
   },
