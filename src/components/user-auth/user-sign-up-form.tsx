@@ -56,13 +56,8 @@ export function UserSignUpForm() {
         password: data.password,
         serviceGender: data.serviceGender,
       })
-
-      toast.success('Seu cadastro foi feito com sucesso!', {
-        action: {
-          label: 'Sign In',
-          onClick: () => navigate(`/sign-in?email=${data.email}`),
-        },
-      })
+      toast.success('Seu cadastro foi feito com sucesso!')
+      navigate(`/sign-in?email=${data.email}`)
     } catch (error) {
       toast.error('Erro ao cadastrar restaurante.')
     }
