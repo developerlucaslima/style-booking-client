@@ -10,6 +10,8 @@ export function useAuthRoutes() {
   useEffect(() => {
     if (token) {
       navigate('/', { replace: true })
+    } else {
+      navigate('/sign-in', { replace: true })
     }
   }, [token, navigate])
 }
