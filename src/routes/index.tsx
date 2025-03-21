@@ -2,10 +2,10 @@ import { createBrowserRouter } from 'react-router-dom'
 
 // import { establishmentRoutes } from './establishments-routes'
 import { usersRoutes } from './users-routes'
+import { notFoundRoutes } from './not-found-route'
 
-const routes = [
-  // ...establishmentRoutes,
-  ...usersRoutes,
-]
-
-export const router = createBrowserRouter(routes)
+export const router = createBrowserRouter([
+	// ...establishmentRoutes,
+	...usersRoutes,
+	...notFoundRoutes,
+])
